@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Reflector } from 'three/examples/jsm/objects/Reflector.js'
 
 let started = false
+const music = document.getElementById('birthday-music')
 
 // ---------- Confetti ----------
 function startConfetti() {
@@ -136,6 +137,26 @@ document.getElementById('enter-btn').addEventListener('click', () => {
   startConfetti()
   initThree()
   animate()
+
+  // Play music (with fade in)
+  music.volume = 0
+  music.muted = false
+  music
+    .play()
+    .then(() => {
+      let vol = 0
+      const fade = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05
+          music.volume = vol
+        } else {
+          clearInterval(fade)
+        }
+      }, 200)
+    })
+    .catch((err) => {
+      console.log('Music play failed:', err)
+    })
 })
 
 // ---------- Resize ----------
