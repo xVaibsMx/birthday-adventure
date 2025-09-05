@@ -14,32 +14,60 @@ body {
   background: linear-gradient(120deg, #ff9a9e, #fad0c4);
 }
 
+/* Title container */
+#title-container {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  z-index: 10;
+  width: 90%;
+}
+
 /* Header */
 #header {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  text-align: center;
   color: #ffffff;
   font-family: 'Baloo 2', cursive;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  z-index: 10;
 }
 
 /* Subtitle */
 #subtitle {
-  position: absolute;
-  top: 80px;
-  width: 100%;
-  text-align: center;
   color: #fffbe6;
   font-family: 'Poppins', sans-serif;
   font-size: clamp(1rem, 3.5vw, 1.5rem);
   font-weight: 500;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+}
+
+/* Enter Button */
+#enter-btn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+#enter-btn:hover {
+  background: #ff3d2e;
+  transform: translateX(-50%) scale(1.05);
 }
 
 /* Confetti */
@@ -61,7 +89,7 @@ body {
   }
 }
 
-/* Three.js canvas full-screen */
+/* Three.js canvas */
 canvas {
   display: block;
   position: absolute;

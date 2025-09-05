@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🎉 Happy Birthday! 🎂</title>
 
-    <!-- SVG favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-    <!-- PNG fallback -->
     <link rel="icon" href="/icon.png" type="image/png" />
     <link rel="shortcut icon" href="/icon.svg" />
 
@@ -21,22 +20,17 @@
     <link rel="stylesheet" href="/src/app.css" />
   </head>
   <body>
-    <!-- Header & Subtitle -->
-    <div id="header">🎉 Happy Birthday, Brother! 🎉</div>
-    <div id="subtitle">Welcome to your 3D Gallery 🎂</div>
+    <!-- Title Container -->
+    <div id="title-container">
+      <div id="header">🎉 Happy Birthday, Brother! 🎉</div>
+      <div id="subtitle">Welcome to your 3D Gallery 🎂</div>
+    </div>
 
-    <!-- Confetti -->
-    <script>
-      const confettiCount = 150
-      for (let i = 0; i < confettiCount; i++) {
-        const c = document.createElement('div')
-        c.className = 'confetti'
-        c.style.left = Math.random() * window.innerWidth + 'px'
-        c.style.animationDuration = Math.random() * 3 + 2 + 's'
-        c.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`
-        document.body.appendChild(c)
-      }
-    </script>
+    <!-- Enter Button -->
+    <button id="enter-btn">Tap to Enter 🎁</button>
+
+    <!-- Confetti (added only after entering) -->
+    <div id="confetti-container"></div>
 
     <!-- Three.js App -->
     <script type="module" src="/src/main.js"></script>
